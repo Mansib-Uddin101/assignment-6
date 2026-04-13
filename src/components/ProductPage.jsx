@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card'
 
 const ProductPage = () => {
     return (
@@ -12,13 +13,16 @@ const ProductPage = () => {
                 <div className='mt-4'>
                     <button className='rounded-full bg-linear-to-r from-blue-600 to-purple-600 px-6 py-3 inline-flex
                      text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-700 active:scale-95'>
-                    Products</button>
+                        Products</button>
                     <button className='py-2 px-6 border  border-[#4F39F6]
                     hover:bg-gray-100 active:scale-95 active:shadow-inner gap-2 rounded-r-full'>
-                    Cart</button>
+                        Cart</button>
                 </div>
-
-                
+            </div>
+            <div className='grid grid-cols-3 gap-2'>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
             </div>
         </div>
     )
