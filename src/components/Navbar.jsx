@@ -39,7 +39,7 @@ const Navbar = () => {
           Login
         </button>
 
-        <button className="rounded-full bg-linear-to-r from-blue-800 to-purple-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-700 active:scale-95">
+        <button className="rounded-full bg-linear-to-r from-blue-600 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-700 active:scale-95">
           Get Started
         </button>
       </div>

@@ -21,7 +21,7 @@ const Banner = () => {
                 <div className='flex gap-4'>
                     <button className='text-white bg-[#4F39F6] py-2 px-3 rounded-full active:scale-95 active:shadow-inner'>Explore Products</button>
                     <button className='py-2 px-3 border text-[#4F39F6] border-[#4F39F6] flex justify-center items-center
-                    hover:bg-gray-100 active:scale-95 active:shadow-inner gap-2 rounded-full'><CiPlay1 />Wach Demo</button>
+                    hover:bg-gray-100 active:scale-95 active:shadow-inner gap-2 rounded-full'><CiPlay1 />Watch Demo</button>
                 </div>
             </div>
             <div>
