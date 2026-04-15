@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from './Card'
 
+
 const ProductPage = () => {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                const res = await fetch("/data.json");
+                const data = await res.json();
+                setProducts(data);
+                ;
+            }
+            catch (error) {
+                console.log("Error fetching data", error);
+
+            }
+        };
+        fetchProduct();
+    }, []);
+
     return (
         <div className='w-5/6 mx-auto'>
             <div className='text-center mb-10'>
@@ -19,10 +37,15 @@ const ProductPage = () => {
                         Cart</button>
                 </div>
             </div>
-            <div className='grid grid-cols-3 gap-2'>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
+            <div className='grid grid-cols-3 gap-4'>
+                {
+                    products.map((product)=> (
+                        <Card key={product.id} product={product}/>
+                        // console.log(product)
+                        
+                        
+                    ))
+                }
             </div>
         </div>
     )

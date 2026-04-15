@@ -1,25 +1,32 @@
 import React from 'react'
 import writeImg from "../assets/products/writing.png"
 import { FaCheck } from 'react-icons/fa'
-const Card = () => {
+const Card = ({product}) => {
+    const {id, name, description, price, period, tag, tagType, features, icon} = product;
+    const tagStyle = {
+        bestSeller: "text-[#BB4D00] bg-[#FEF3C6]",
+        popular: "text-purple-600 bg-[#E1E7FF]",
+        new: "text-[#0A883E] bg-[#DBFCE7]"
+    }
+    
     return (
-        <div className='border border-gray-200 shadow-sm rounded-2xl p-4 flex flex-col gap-4 relative'>
-            <div className='bg-yellow-200 mt-1 absolute top-0 right-0 rounded-full px-2 py-1'>
-                <h3>Best Seller</h3>
+        <div className='border border-gray-200 shadow-sm rounded-2xl p-4 flex flex-col justify-between gap-4 relative'>
+            <div className={`${tagStyle[tagType]} mt-1 absolute top-0 right-0 rounded-full px-2 py-1`}>
+                <h3>{tag}</h3>
             </div>
             <div className="border w-12 h-12 rounded-full overflow-hidden flex items-center justify-center p-2">
-                <img src={writeImg} alt="" className="w-full h-full object-cover" />
+                <img src={icon} alt="" className="w-full h-full object-cover" />
             </div>
             <div>
-                <h3 className='text-2xl font-bold'>AI Writing Pro</h3>
-                <p className='text-[#627382]'>Generate high-quality content, blogs, and marketing copy in seconds with advanced AI.</p>
+                <h3 className='text-2xl font-bold'>{name}</h3>
+                <p className='text-[#627382]'>{description}</p>
             </div>
             <div>
-                <h3 className='text-2xl font-bold'>$29 <span className='text-lg opacity-50'>/Mo</span></h3>
+                <h3 className='text-2xl font-bold'>${price} <span className='text-lg opacity-50'>/{period}</span></h3>
                 <ul className='opacity-50'>
-                    <li className='flex items-center gap-1'><FaCheck color='#30B868' />Unlimited AI Generations</li>
-                    <li className='flex items-center gap-1'><FaCheck color='#30B868' />Unlimited AI Generations</li>
-                    <li className='flex items-center gap-1'><FaCheck color='#30B868' />Unlimited AI Generations</li>
+                    {features.map((feature) => (
+                        <li className='flex items-center gap-1'><FaCheck color='#30B868' />{feature}</li>                        
+                    ))}
                 </ul>
             </div>
             <div className=''>
