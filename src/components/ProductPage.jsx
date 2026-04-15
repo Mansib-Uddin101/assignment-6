@@ -20,6 +20,12 @@ const ProductPage = () => {
         fetchProduct();
     }, []);
 
+    const [toggle, setToggle] = useState("product");
+    const toggleClasses = {
+        active: " bg-linear-to-r from-blue-600 to-purple-600 text-white",
+        inactive: ""
+    }
+    
     return (
         <div className='w-5/6 mx-auto'>
             <div className='text-center mb-10'>
@@ -28,21 +34,22 @@ const ProductPage = () => {
                     <p className='text-[#627382]'>Choose from our curated collection of premium digital products
                         designed <br /> to boost your productivity and creativity.</p>
                 </div>
-                <div className='mt-4'>
-                    <button className='rounded-full bg-linear-to-r from-blue-600 to-purple-600 px-6 py-3 inline-flex
-                     text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-700 active:scale-95'>
+                <div className='mt-4 border border-[#4F39F6] inline-flex rounded-full'>
+                    <button
+                    onClick={()=> setToggle("product")}
+                    className={`${toggle === "product" ? " bg-linear-to-r from-blue-600 to-purple-600 text-white": ""} rounded-l-full px-6 py-3 inline-flex
+                     text-sm font-semibold shadow-md active:scale-95`}>
                         Products</button>
-                    <button className='py-2 px-6 border  border-[#4F39F6]
-                    hover:bg-gray-100 active:scale-95 active:shadow-inner gap-2 rounded-r-full'>
-                        Cart</button>
+                    <button
+                    onClick={()=> setToggle("cart")}
+                    className={`${toggle === "product" ? "" : " bg-linear-to-r from-blue-600 to-purple-600 text-white"} py-2 px-6 active:scale-95 gap-2 rounded-r-full`}>
+                        Cart (<span>2</span>)</button>
                 </div>
             </div>
             <div className='grid grid-cols-3 gap-4'>
                 {
                     products.map((product)=> (
                         <Card key={product.id} product={product}/>
-                        // console.log(product)
-                        
                         
                     ))
                 }
