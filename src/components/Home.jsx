@@ -2,7 +2,7 @@
     import Banner from './Banner'
 import ProductPage from './ProductPage'
 
-    const Home = () => {
+    const Home = ({card, setCard}) => {
         return (
             <div>
                 <Banner></Banner>
@@ -22,7 +22,7 @@ import ProductPage from './ProductPage'
                         </div>
                     </div>
                 </div>
-                <ProductPage></ProductPage>
+                <ProductPage setCard={setCard} card={card}></ProductPage>
             </div>
         )
     }
