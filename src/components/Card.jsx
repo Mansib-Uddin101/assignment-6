@@ -22,8 +22,8 @@ const Card = ({ product, setCard, card }) => {
     return (
         <div className='border border-gray-200 shadow-sm rounded-2xl p-4 flex flex-col justify-between gap-4 relative
         overflow-hidden transition-all duration-300 hover:scale-101 hover:shadow-2xl cursor-pointer'>
-            <div className={`${tagStyle[tagType]} mt-1 absolute top-0 right-0 rounded-full px-2 py-1`}>
-                <h3>{tag}</h3>
+            <div className={`${tagStyle[tagType]} m-2 absolute top-0 right-0 rounded-full px-2 py-1`}>
+                <h3 className=''>{tag}</h3>
             </div>
             <div className="border w-12 h-12 rounded-full overflow-hidden flex items-center justify-center p-2">
                 <img src={icon} alt="" className="w-full h-full object-cover" />

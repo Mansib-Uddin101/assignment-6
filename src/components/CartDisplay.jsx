@@ -83,5 +83,5 @@ const CartDisplay = ({ card, setCard }) => {
         </div>
     )
 }
-
+ 
 export default CartDisplay
